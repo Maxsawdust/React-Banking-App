@@ -1,0 +1,57 @@
+#balance-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#balance-heading {
+  font-weight: 600;
+}
+
+.balance {
+  font-size: 4rem;
+  font-weight: 700;
+  filter: drop-shadow(0.15rem 0.15rem 0.1rem rgba(0, 0, 0, 0.5));
+}
+
+#balance-currency {
+  /* positioning */
+  position: absolute;
+  left: -3.5rem;
+  top: 0.875rem;
+  /* sizing */
+  height: 4rem;
+  width: 4rem;
+}
+
+#balance-currency > svg {
+  /* sizing */
+  height: 100%;
+  width: 100%;
+  /* colouring */
+  fill: #036403;
+  stroke: #074107;
+  stroke-width: 2ch;
+  /* styling */
+  filter: drop-shadow(0.15rem 0.15rem 0.1rem rgba(0, 0, 0, 0.5));
+}
+
+#balance-amount::after {
+  /* sizing */
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  /* positioning */
+  position: absolute;
+  top: 78px;
+  left: 0;
+  /* styling */
+  background-color: var(--balance-bar-color);
+  border-radius: 0.3rem;
+}
+
+#balance-emoji {
+  font-size: 4rem;
+  position: absolute;
+}
