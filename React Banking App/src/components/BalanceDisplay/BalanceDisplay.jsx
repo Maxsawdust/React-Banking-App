@@ -1,6 +1,19 @@
 import "./BalanceDisplay.css";
 
 export default function BalanceDisplay(props) {
+  // storing emojis in object for better ease of use/readability.
+  const emojis = {
+    shocked: "😱",
+    worried: "😨",
+    sad: "😔",
+    happy: "🙂",
+    ecstatic: "😍",
+  };
+
+  const balance = Number(props.balance) || 0;
+
+  console.log(props.color);
+
   return (
     <header id="balance-display">
       <h1 id="balance-heading">Current Balance</h1>
@@ -15,10 +28,10 @@ export default function BalanceDisplay(props) {
           id="balance-amount"
           style={{ "--balance-bar-color": props.color }}
         >
-          0
+          {balance}
         </span>
         <span className="balance" id="balance-emoji">
-          {props.emoji}
+          {emojis.sad}
         </span>
       </div>
     </header>

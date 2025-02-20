@@ -49,6 +49,7 @@
   /* styling */
   background-color: var(--balance-bar-color);
   border-radius: 0.3rem;
+  transition: all 0.5s;
 }
 
 #balance-emoji {
