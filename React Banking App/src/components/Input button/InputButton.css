@@ -1,0 +1,22 @@
+.input-button {
+  /* sizing */
+  width: 10rem;
+  height: 3rem;
+  /* placement */
+  place-self: center;
+  /* styling */
+  border-radius: 0.5rem;
+  border: 0;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.324);
+  background-color: #e9e9ed;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.input-button:hover {
+  background-color: #e4e4e4;
+}
+
+.input-button:active {
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.324);
+}

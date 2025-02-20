@@ -1,0 +1,87 @@
+.modal-window {
+  /* sizing */
+  width: fit-content;
+  height: fit-content;
+  padding: 1.2rem 1rem;
+  /* placement */
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  /* styling */
+  background-color: white;
+  border-radius: 3rem;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.651);
+  /* display */
+  position: absolute;
+}
+
+.modal-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-input {
+  /* sizing */
+  font-size: 2rem;
+  padding: 0.2rem 1rem;
+  /* styling */
+  border: 2px solid rgba(0, 0, 0, 0.349);
+  border-radius: 1rem;
+  outline: none;
+}
+
+.label {
+  /* positioning */
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  /* styling */
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.495);
+}
+
+.modal-input:focus,
+.modal-input:not(:placeholder-shown) {
+  border: 2px solid black;
+}
+
+.modal-input:focus + .label,
+.modal-input:not(:placeholder-shown) + .label {
+  transform: translate(-23px, -38px) scale(0.88);
+  z-index: 2;
+  color: black;
+}
+
+.close-button {
+  /* sizing */
+  height: 2rem;
+  width: 2rem;
+  /* placement */
+  display: grid;
+  place-content: center;
+  /* styling */
+  border-radius: 100%;
+  border: 0;
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.651);
+  background-color: #e9e9ed;
+  transition: all 0.1s;
+}
+
+.close-button:hover {
+  background-color: #e4e4e4;
+}
+
+.close-button:active {
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.434);
+}

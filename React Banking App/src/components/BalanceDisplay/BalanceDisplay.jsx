@@ -12,8 +12,6 @@ export default function BalanceDisplay(props) {
 
   const balance = Number(props.balance) || 0;
 
-  console.log(props.color);
-
   return (
     <header id="balance-display">
       <h1 id="balance-heading">Current Balance</h1>
