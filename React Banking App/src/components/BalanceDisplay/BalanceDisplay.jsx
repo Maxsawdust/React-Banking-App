@@ -1,16 +1,31 @@
+import { useEffect, useState } from "react";
 import "./BalanceDisplay.css";
 
 export default function BalanceDisplay(props) {
-  // storing emojis in object for better ease of use/readability.
-  const emojis = {
-    shocked: "😱",
-    worried: "😨",
-    sad: "😔",
-    happy: "🙂",
-    ecstatic: "😍",
-  };
-
+  // getting the balance from the BalanceParent component
   const balance = Number(props.balance) || 0;
+  const [displayEmoji, setDisplayEmoji] = useState("😔");
+
+  // map for emojis and the balance thresholds they should be displayed at
+  /* I like this approach because it removes if...else & switch...case statements, 
+     and also makes maintenance easier */
+  const EMOJIS = [
+    { threshold: -1000, emoji: "💀" },
+    { threshold: -100, emoji: "😱" },
+    { threshold: 0, emoji: "😨" },
+    { threshold: 10, emoji: "😔" },
+    { threshold: 100, emoji: "🙂" },
+    { threshold: 1000, emoji: "😄" },
+    { threshold: Infinity, emoji: "😍" },
+  ];
+
+  // using effect to change the emoji as the balance changes
+  useEffect(() => {
+    /* destructuring object to access threshold and getting the object where the 
+       balance is below the threshold */
+    const emojiSetting = EMOJIS.find(({ threshold }) => balance < threshold);
+    setDisplayEmoji(emojiSetting.emoji);
+  }, [balance]);
 
   return (
     <header id="balance-display">
@@ -29,7 +44,7 @@ export default function BalanceDisplay(props) {
           {balance}
         </span>
         <span className="balance" id="balance-emoji">
-          {emojis.sad}
+          {displayEmoji}
         </span>
       </div>
     </header>
